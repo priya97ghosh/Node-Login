@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    body {
+      background-image: url("https://images.pexels.com/photos/674578/pexels-photo-674578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 30%;
+      border-radius: 5px;
+    }
+    .card:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .cardContainer {
+      padding: 2px 16px;
+    }
+    #myProgress {
+      background-color: #ddd;
+    }
+
+    #myBar {
+      height: 30px;
+      background-color: #5ac1d1;
+      text-align: center;
+      line-height: 30px;
+      color: white;
+    }
+  </style>
+  <body>
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/">Nutrify</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/dashboard">Dashboard</a></li>
+          <li><a href="/meals/addMeal">Add Meal</a></li>
+          <li><a href="/profile/userProfile">Profile</a></li>
+
+          <li>
+            <a href="/user/logout"
+              ><span class="glyphicon glyphicon-log-out"></span> Logout</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2 style="color: white">Dashboard</h2>
+    <div class="container">
+      <form action="/meals/mealDate" method="POST">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" /><br /><br />
+        <div id="myProgress">
+          <div id="myBar" style="width: <%= percentage %>">
+            <%= percentage %>
+          </div>
+        </div>
+      </form>
+      <br /><br />
+
+      <div class="card">
+        <div class="cardContainer">
+          <h4><b>Breakfast</b></h4>
+          <hr
+            style="
+              height: 1.5px;
+              border-width: 0;
+              color: gray;
+              background-color: gray;
+            "
+          />
+          <p>Calories:</p>
+          <p>Calories:</p>
+          <p>Calories:</p>
+          <i style="font-size: 24px" class="far">&#xf044;</i>
+          <i style="font-size: 24px" class="far">&#xf2ed;</i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

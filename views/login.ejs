@@ -1,0 +1,246 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .back {
+      background-image: url("http://www.ineedmorespace.co.uk/wp-content/uploads/2014/05/Blur-Wallpaper.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 665px;
+      -webkit-filter: blur(50px);
+      position: fixed;
+    }
+    .register-form {
+      background-color: #fff;
+      background-opacity: 0.4;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 100px #000;
+      z-index: 2;
+    }
+    .reg-text {
+      position: absolute;
+      font-family: sans-serif;
+      font-size: 15px;
+      text-transform: capitalize;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #383838;
+    }
+    .reg-form {
+      position: relative;
+      top: 70px;
+      margin: 40px;
+      height: 200px;
+    }
+
+    .text input {
+      width: 100%;
+      heiht: 0px;
+      margin: 10px auto;
+      border: none;
+      outline: none;
+    }
+    hr {
+      position: relative;
+      top: -10px;
+      opacity: 0.5;
+    }
+    .terms label {
+      display: block;
+      padding-left: 25px;
+      font-family: sans-serif;
+      font-size: 12px;
+      color: grey;
+      text-indent: -18px;
+    }
+    button {
+      border: none;
+      text-transform: uppercase;
+      margin: 40px 0px 0px 0px;
+      padding: 8px;
+      color: #fff;
+      background: #5b98f5;
+      border-radius: 5px;
+      outline: none;
+      float: right;
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .largen:active {
+      transform: scale(2);
+    }
+  </style>
+  <body>
+    <div class="back"></div>
+    <div class="register-form">
+      <h1 class="reg-text">Login</h1>
+
+      <form class="reg-form" action="/user/login" method="POST">
+        <div class="text">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+          <hr />
+          <input type="password" name="password" placeholder="Enter Password" />
+          <hr />
+        </div>
+
+        <button type="submit" name="registor-button">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Nutrify</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+  <style>
+    body {
+  background-image: url('https://images.pexels.com/photos/674578/pexels-photo-674578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+    
+    .back {
+      
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 665px;
+      -webkit-filter: blur(50px);
+      position: fixed;
+    }
+    .register-form {
+      background-color: #fff;
+      background-opacity: 0.4;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 100px #000;
+      z-index: 2;
+    }
+    .reg-text {
+      position: absolute;
+      font-family: sans-serif;
+      font-size: 19px;
+      text-transform: capitalize;
+      top: 20px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #383838;
+    }
+    .reg-form {
+      position: relative;
+      top: 70px;
+      margin: 40px;
+      height: 200px;
+    }
+
+    .text input {
+      width: 100%;
+      heiht: 0px;
+      margin: 10px auto;
+      border: none;
+      outline: none;
+    }
+    hr {
+      position: relative;
+      top: -10px;
+      opacity: 0.5;
+    }
+    .terms label {
+      display: block;
+      padding-left: 25px;
+      font-family: sans-serif;
+      font-size: 12px;
+      color: grey;
+      text-indent: -18px;
+    }
+    button {
+      border: none;
+      text-transform: uppercase;
+      margin: 40px 0px 0px 0px;
+      padding: 8px;
+      color: #fff;
+      background: #5b98f5;
+      border-radius: 5px;
+      outline: none;
+      float: right;
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    
+  </style>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Nutrify</a>
+    </div>
+  </div>
+</nav>
+  <div class="back"></div>
+    <div class="register-form">
+      <h1 class="reg-text">Login</h1>
+
+      <form class="reg-form" action="/user/login" method="POST">
+        <div class="text">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter Email"
+          />
+          <hr />
+          <input type="password" name="password" placeholder="Enter Password" />
+          <hr />
+        </div>
+
+        <button type="submit" name="registor-button" class="btn btn-info">Login</button>
+      </form>
+    </div>
+  </body>
+
+
+</body>
+</html>
