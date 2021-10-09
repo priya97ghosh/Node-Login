@@ -1,15 +1,14 @@
 const express = require("express");
 var router = express.Router();
-var jsonParser = express.json();
 
 const jwt = require("jsonwebtoken");
 jwtKey = "jwt";
 const loginModel = require("../models/login");
 const bcrypt = require("bcryptjs");
-//backend validation for login/register api
+//backend field validation for login/register api
 const { check, validationResult, cookie } = require("express-validator");
 
-const session = require("express-session");
+//middleware to protect routes
 const auth = require("../middleware/auth");
 
 router.get("/", (req, res) => {
@@ -87,7 +86,7 @@ router.post(
               secure: false, // set to true if your using https
               httpOnly: true,
             });
-            res.json({ token });
+            res.json({ token }); //giving a response back
           }
         );
         res.redirect("/dashboard");
@@ -114,6 +113,7 @@ router.post(
     try {
       let user = await loginModel.findOne({ email });
       if (!user) {
+        //if user is not exist
         res.status(400).json({ errors: [{ msg: "Invalid Credential" }] });
       } else {
         //Match user password and encrypted password.
@@ -156,33 +156,16 @@ router.post(
   }
 );
 
-//edit user profile
-router.get(
-  "/editProfile",
-  auth,
-  // [
-  //   check("name", "Please Enter name !").not().isEmpty(),
-  //   check("email", "Please Enter valid E-Mail !").isEmail(),
-  //   check(
-  //     "password",
-  //     "Please Enter a password with 6 or more characters !"
-  //   ).isLength({
-  //     min: 6,
-  //   }),
-  //   check("calorieLimit", "Please enter valid data").not().isEmpty(),
-  // ],
-  async (req, res) => {
-    console.log(`user Profile it is ${req.user}`);
+//edit user profile PENDING
+router.get("/editProfile", auth, async (req, res) => {
+  console.log(`user Profile it is ${req.user}`);
 
-    let user = await loginModel
-      .findOne({ _id: req.user.id })
-      .select("-password");
-    res.json({ user });
-    if (!user) {
-      res.status(400).json({ errors: [{ msg: "Invalid Credential" }] });
-    }
+  let user = await loginModel.findOne({ _id: req.user.id }).select("-password");
+  res.json({ user });
+  if (!user) {
+    res.status(400).json({ errors: [{ msg: "Invalid Credential" }] });
   }
-);
+});
 
 //delete user profile
 router.delete("/deleteProfile/:id", auth, async (req, res) => {

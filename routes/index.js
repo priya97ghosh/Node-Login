@@ -28,16 +28,18 @@ router.get("/dashboard", auth, async (req, res) => {
   const aggregate = await mealModel.aggregate([
     {
       $match: {
-        $and: [{ user: userId }, { date: new Date(finalDate) }],
+        // It will match the user Id and date
+        $and: [{ user: userId }, { date: new Date() }],
       },
     },
-    { $group: { _id: "$user", total: { $sum: "$calories" } } },
+    { $group: { _id: "$user", total: { $sum: "$calories" } } }, // group the record by ID
   ]);
 
   const calories =
     aggregate && aggregate[0] && aggregate[0].total ? aggregate[0].total : 0;
-
+  console.log("this line", aggregate[0]);
   const percentage = Math.round((calories / userCalorieLimit) * 100);
+
   console.log(`${percentage}%`);
 
   console.log(calories);
