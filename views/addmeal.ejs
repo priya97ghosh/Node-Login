@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-  />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <style>
-    body {
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+   body {
       background-image: url("https://images.pexels.com/photos/674578/pexels-photo-674578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -43,64 +42,55 @@
       color: white;
     }
 
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-  </style>
-  <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#">Nutrify</a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="/dashboard">Dashboard</a></li>
-          <li><a href="#">Add Meal</a></li>
-          <li><a href="/profile/userProfile">Profile</a></li>
-          <li>
-            <a href="#"
-              ><span class="glyphicon glyphicon-log-out"></span> Logout</a
-            >
-          </li>
-        </ul>
+
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+</style>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Nutrify</a>
       </div>
-    </nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="#">Add Meal</a></li>
+        <li><a href="/profile/userProfile">Profile</a></li>
+        <li>
+          <a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-    <h2 style="color: white">Add Meal</h2>
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <form action="/meals/addMeal" method="POST">
-          <label for="date">Date:</label><br /><br />
-          <input type="date" id="date" name="date" /><br /><br />
+  <h2 style="color: white">Add Meal</h2>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <form action="/meals/addMeal" method="POST">
+        <label for="date">Date:</label><br /><br />
+        <input type="date" id="date" name="date" /><br /><br />
 
-          <label for="mtype">Meal Type</label>
-          <input
-            type="text"
-            id="mtype"
-            name="mealType"
-            placeholder="Meal Type"
-          />
+        <label for="mtype">Meal Type</label>
+        <input type="text" id="mtype" name="mealType" placeholder="Meal Type" />
 
-          <label for="mname">Meal Name</label>
-          <input
-            type="text"
-            id="mname"
-            name="mealName"
-            placeholder="Meal Name"
-          />
+        <label for="mname">Meal Name</label>
+        <input type="text" id="mname" name="mealName" placeholder="Meal Name" />
 
-          <label for="des">Description</label>
-          <input type="text" id="des" name="description" placeholder="" />
+        <label for="des">Description</label>
+        <input type="text" id="des" name="description" placeholder="" />
 
-          <label for="cal">Calories</label>
-          <input type="text" id="cal" name="calories" placeholder="0" />
-          <button type="button" class="btn btn-danger">
+        <label for="cal">Calories</label>
+        <input type="text" id="cal" name="calories" placeholder="0" />
+        <button type="button" class="btn btn-danger">
 
           <input type="submit" value="Submit" />
-        </form>
-      </div>
+      </form>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
